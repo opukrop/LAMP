@@ -37,6 +37,6 @@ else
     VER=$(uname -r)
 fi
 
-echo -e "$Yellow OS:$OS Version:$VER $Color_Off"
+echo -e "$Yellow OS:$OS | Version:$VER $Color_Off"
 
 echo -e "$Green END $Color_Off"
