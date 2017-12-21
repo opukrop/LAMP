@@ -39,7 +39,7 @@ echo -e "$Yellow Your OS:$OS $VER $Color_Off"
 
 ###################### Update Repositories #################
 
-if [ OS == CentOS Linux ]; then
+if [ "$OS" == "CentOS Linux" ]; then
     echo -e "$Cyan==========Update yum cache==========$Color_Off"
     yum makecache
 
