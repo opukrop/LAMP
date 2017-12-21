@@ -23,4 +23,20 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Check OS
+
+if [ -f /etc/os-release ]; then
+    # freedesktop.org and systemd
+    . /etc/os-release
+    OS=$NAME
+    VER=$VERSION_ID
+
+else
+    # Fall back to uname, e.g. "Linux <version>", also works for BSD, etc.
+    OS=$(uname -s)
+    VER=$(uname -r)
+fi
+
+echo -e "$Yellow OS:$OS Version:$VER $Color_Off"
+
 echo -e "$Green END $Color_Off"
