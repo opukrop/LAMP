@@ -35,6 +35,17 @@ else
     VER=$(uname -r)
 fi
 
-echo -e "$Yellow OS:$OS | Version:$VER $Color_Off"
+echo -e "$Yellow Your OS:$OS $VER $Color_Off"
+
+###################### Update Repositories #################
+
+if [ OS == CentOS Linux ]; then
+    echo -e "$Cyan==========Update yum cache==========$Color_Off"
+    yum makecache
+
+else
+    echo -e "$Cyan==========Update apt-get==========$Color_Off"
+    apt-get update
+fi
 
 echo -e "$Green END $Color_Off"
