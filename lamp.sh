@@ -43,9 +43,11 @@ if [ "$OS" == "CentOS Linux" ]; then
     echo -e "$Cyan==========Update yum cache==========$Color_Off"
     yum makecache
 
-else
+elif [ "$OS" == "Ubuntu"  ]; then
     echo -e "$Cyan==========Update apt-get==========$Color_Off"
     apt-get update
+else
+    echo -e "$Cyan=============Unkown parameter==========$Color_Off"
 fi
 
 echo -e "$Green END $Color_Off"
